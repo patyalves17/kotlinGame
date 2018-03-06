@@ -28,8 +28,8 @@ class GameController {
         return gameService.buscarPor(nome = titulo)
     }
 
-    @DeleteMapping(value="{id}")
-    fun apagar(@PathVariable(value="id")id:String){
+    @DeleteMapping("{id}")
+    fun apagar(@PathVariable("id")id:String){
         gameService.apagar(id)
     }
 
