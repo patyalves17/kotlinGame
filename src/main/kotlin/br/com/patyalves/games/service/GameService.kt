@@ -18,4 +18,11 @@ class GameService{
     fun salvar(game: Game){
         gameRepository.save(game)
     }
+    fun buscarPor(nome:String): List<Game>{
+        return gameRepository.findByNomeIgnoreCaseContaining(nome)
+    }
+
+    fun apagar(id:String){
+        gameRepository.deleteById(id)
+    }
 }

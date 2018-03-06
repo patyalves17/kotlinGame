@@ -20,5 +20,17 @@ class GameController {
     @PostMapping
     fun salvar(@RequestBody game: Game) {
         gameService.salvar(game)
+
     }
+
+    @GetMapping(value="/titulo/{titulo}")
+    fun buscarpor(@PathVariable (value="titulo") titulo:String):List<Game> {
+        return gameService.buscarPor(nome = titulo)
+    }
+
+    @DeleteMapping(value="{id}")
+    fun apagar(@PathVariable(value="id")id:String){
+        gameService.apagar(id)
+    }
+
 }
